@@ -39,7 +39,9 @@ def handler(signum, frame):
     print "exit"
     # with open("a.txt","w") as f:
     #     f.write(total)
-    print total
+    print "time:",time.time()-start_time
+    print "packet num:",total
+    print "pps:",total/(time.time()-start_time)
     sys.exit()
 
 if __name__ == "__main__":
@@ -52,6 +54,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, handler)
     signal.signal(signal.SIGTERM, handler)
     threads = []
+    start_time = time.time()
     for _ in range(0,concurrent):
         t = SynFlood(target,port)
         t.setDaemon(True)
