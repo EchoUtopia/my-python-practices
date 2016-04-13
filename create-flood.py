@@ -57,7 +57,7 @@ class flood_manage:
         self.__inter_file = inter_file
         self.__get_inter_name()
         if not os.path.exists(self.__inter_file):
-            os.path.touch(self.__inter_file)
+            open(self.__inter_file,"w").close()
         self.__used_inter = self.__read_file()
 
     def __write_file(self,object):
