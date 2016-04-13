@@ -55,10 +55,10 @@ class flood_manage:
     def __init__(self,inter_file="/tmp/inter_file"):
         self.__all_inter = set()
         self.__inter_file = inter_file
-        self.__used_inter = self.__read_file()
         self.__get_inter_name()
         if not os.path.exists(self.__inter_file):
             os.path.touch(self.__inter_file)
+        self.__used_inter = self.__read_file()
 
     def __write_file(self,object):
         '''
