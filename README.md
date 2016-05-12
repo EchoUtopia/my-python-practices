@@ -1,7 +1,7 @@
 # my-python-practices
   simplemultithreadsCrawler.py:
   
-    一个简单的多线程生产者消费者爬虫，实际使用的时候可以重写parser的解析规则，
+    一个简单的多线程生产者消费者爬虫，实际使用的时候可以重写parser的parse_links方法，来写自己的解析规则，
     然后将解析后将继续要爬的地址放入url队列，生产者会自动爬
     
   
